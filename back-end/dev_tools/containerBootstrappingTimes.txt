@@ -1,0 +1,4 @@
+Times:
+Bootstrapping container without nothing: 0m0.638s
+Bootstrapping container with cloud-config: 0m5.819s
+Bootstrapping container with exec: 0m1.051s

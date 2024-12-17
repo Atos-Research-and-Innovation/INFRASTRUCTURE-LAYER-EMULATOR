@@ -1,0 +1,118 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: 6gdawn
+  labels:
+    name: 6gdawn
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vod-server
+  labels:
+    app: vod-server
+  namespace: 6gdawn
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vod-server
+  template:
+    metadata:
+      labels:
+        app: vod-server
+    spec:
+      # terminationGracePeriodSeconds: 5
+      # Define the init container that introduces a delay
+      initContainers:
+      - name: delay-init
+        image: busybox
+        command: ["sh", "-c", "sleep 10"] # 10 seconds delay
+        # For reactive orch. 7s
+        # For predictive orch. 0s (init container removed)
+      containers:
+      - name: vod-server
+        image: rasoul5g/vod-6gdawn:latest
+        ports:
+        - containerPort: 80
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: service
+                operator: In
+                values:
+                - iccsns
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - ubuntu-6-11
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - ubuntu-8-21
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - ubuntu-8-15
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - vod-server
+            topologyKey: "kubernetes.io/hostname"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vod-server-service
+  namespace: 6gdawn
+spec:
+  selector:
+    app: vod-server
+  ports:
+    - protocol: TCP
+      # port: 30000
+      # targetPort: 80
+  # type: NodePort
+      port: 80
+      nodePort: 31664
+  type: LoadBalancer
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: vod-server-core-deployment
+#   namespace: 6gdawn
+#   labels:
+#     app: vod-server-core
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: vod-server-core
+#   template:
+#     metadata:
+#       labels:
+#         app: vod-server-core
+#     spec:
+#       containers:
+#       - name: vod-server-core
+#         image: rasoul5g/vod-6gdawn:latest
+#         ports:
+#         - containerPort: 80
+#       nodeName: ubuntu-10-11

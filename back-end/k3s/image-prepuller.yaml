@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: image-prepuller
+spec:
+  selector:
+    matchLabels:
+      app: image-prepuller
+  template:
+    metadata:
+      labels:
+        app: image-prepuller
+    spec:
+      containers:
+      - name: prepull-image
+        image: busybox
+        command: ['sh', '-c', 'crictl pull rasoul5g/vod-6gdawn:latest']
+        volumeMounts:
+          - mountPath: /var/run/containerd/containerd.sock
+            name: containerd-sock
+      restartPolicy: OnFailure
+      volumes:
+        - name: containerd-sock
+          hostPath:
+            path: /run/k3s/containerd/containerd.sock

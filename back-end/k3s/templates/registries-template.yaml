@@ -1,0 +1,11 @@
+mirrors:
+  docker.io:
+    endpoint:
+      - https://registry.atosresearch.eu:18520
+configs:
+  "registry.atosresearch.eu:18520":
+    auth:
+      username: $ADDYOURUSER
+      password: $ADDYOURPASSWORD
+    tls:
+      insecure_skip_verify: true

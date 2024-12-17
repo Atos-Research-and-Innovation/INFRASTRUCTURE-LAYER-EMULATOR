@@ -1,0 +1,17 @@
+[Unit]
+Description=Lightweight Kubernetes
+Documentation=https://k3s.io
+
+[Service]
+ExecStart=/usr/local/bin/k3s server --snapshotter native --kubelet-arg='--enforce-node-allocatable=''' --kubelet-arg='--cgroups-per-qos=false'
+Restart=always
+KillMode=process
+
+# Execute the script after the k3s service starts
+ExecStartPost=/usr/share/ils/bin/k3s_set_node_role.sh
+
+# Script to prepull image service on the node
+# ExecStartPost=/usr/share/ils/bin/k3s_prepull_images.sh
+
+[Install]
+WantedBy=default.target

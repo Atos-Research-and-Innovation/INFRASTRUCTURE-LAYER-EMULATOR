@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: image-prepuller
+  namespace: kube-system
+  labels:
+    app: image-prepuller
+spec:
+  selector:
+    matchLabels:
+      app: image-prepuller
+  template:
+    metadata:
+      labels:
+        app: image-prepuller
+    spec:
+      containers:
+      - name: prepuller
+        image: registry.gitlab.com/netmode/6g-latency-sensitive-service:receiver_encoder_publisher_srt
+        command: [ "sh", "-c", "echo Image pre-pulled; while true; do sleep 3600; done" ]
+      # tolerations:
+      # - key: node-role.kubernetes.io/master
+      #   operator: Exists
+      #   effect: NoSchedule
+      nodeSelector:
+        service: iccsns
+      #   kubernetes.io/os: linux
