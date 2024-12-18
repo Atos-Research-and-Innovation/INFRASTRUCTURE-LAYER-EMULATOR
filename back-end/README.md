@@ -31,9 +31,9 @@
 
 In this section are listed all the required steps to have the **Infrastructure Layer Emulator (ILE)** running over LXD.
 
-First of all, there are some common steps to be executed in order to have the environment ready for deploying the back end. To complete them, follow the steps in the section [Environment Set Up](#environment-Set-Up).
+First of all, there are some common steps to be executed in order to have the environment ready for deploying the back end. To complete them, follow the steps in the section [Environment Set Up](#environment-set-up).
 
-For deeper information about the shell scripts used in this project [Shell scripts](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts) contains a brief description of the purpose of each shell script and the corresponding usage, showing what are the arguments that must be passed at the input.
+For deeper information about the shell scripts used in this project [Shell scripts](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts) contains a brief description of the purpose of each shell script and the corresponding usage, showing what are the arguments that must be passed at the input.
 
 Additionally, a couple of predefined examples are already created in this repository and are ready to use, its usage is explained in the corresponding sections [Lightweight emulation](#lightweight-emulation) and [K3s emulation](#k3s-emulation).
 
@@ -201,13 +201,13 @@ This will create all the containers, one per line in the executed script.
 Inside the extreme edge containers the corresponding files for managing the turnning on and off are created under the directory /usr/share/ils/bin
 -->
 
-**2 -** Execute the following command in the same terminal to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#2_execute_emulation):
+**2 -** Execute the following command in the same terminal to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#2_execute_emulation):
 
 ````bash
 sudo ./2_execute_emulation.sh <time_start>
 ````
 
-**3 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#3_get_containers_status):
+**3 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#3_get_containers_status):
 
 ````bash
 sudo ./3_get_containers_status.sh nodejs-server/config_matrix.txt nodejs-server/matrix_size.txt nodejs-server/time_diff.txt <time_start> 3600
@@ -219,7 +219,7 @@ sudo ./3_get_containers_status.sh nodejs-server/config_matrix.txt nodejs-server/
 nodejs nodejs-server/file-server-express.js
 ````
 
-This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/front-end)
+This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/front-end)
 
 ## K3s emulation
 
@@ -231,7 +231,7 @@ The second one is what we called **"K3s"** emulation. In this one the containers
 
 Note: It's assumed that every command must be executed in the directory where this readme file is located.
 
-Initial step - Before going into the steps for this emulation, go to the [K3s](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end/k3s) readme and complete the section called **Environment preparation**
+Initial step - Before going into the steps for this emulation, go to the [K3s](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end/k3s) readme and complete the section called **Environment preparation**
 
 **1 -** Execute the following command to create the containers:
 
@@ -313,22 +313,22 @@ sudo ./3_start_service_check.sh nginx nginx
 cd ..
 ````
 
-**11 -** Here, execute the following command to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#2_execute_emulation):
+**11 -** Here, execute the following command to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#2_execute_emulation):
 
 ````bash
 sudo ./2_execute_emulation.sh <time_start>
 ````
 
-**12 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#3_get_containers_status):
+**12 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#3_get_containers_status):
 
 ````bash
 sudo ./3_get_containers_status.sh nodejs-server/config_matrix.txt nodejs-server/matrix_size.txt nodejs-server/time_diff.txt <time_start> 60
 ````
 
 Note: The main goal of this emulation is to showcase how a replica of a certain service deployed in k3s is disappearing and appearing again when a certain k3s node is removed and reattached from the cluster. So, to give time to k3s to realize the node has disappeared and take actions, i.e. deploy another replica of the service, it's highly recommended to use the argument `time_factor=60` here to avoid the containers to be continuously changing from on to off and viceversa.
-The same applies when configuring the **time_pattern** argument for the script [create_containers.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#create_containers) inside [1_create_emulation_k3s.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#1_create_emulation_k3s) for each container, it's recommended to leave at least 2 hours (that will be minutes due to the time_factor definition to 60) between the turn on and off.
+The same applies when configuring the **time_pattern** argument for the script [create_containers.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#create_containers) inside [1_create_emulation_k3s.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#1_create_emulation_k3s) for each container, it's recommended to leave at least 2 hours (that will be minutes due to the time_factor definition to 60) between the turn on and off.
 
-To summ up, without changing [1_create_emulation_k3s.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#1_create_emulation_k3s) file and using arg. `time_start=60` in step 3 at [Lightweight deployment steps](#Lightweight-deployment-steps) is sufficient to see how the replica of the service is changing over the containers, as some of the containers that are in state on will change to off every 2 minutes and viceversa.
+To summ up, without changing [1_create_emulation_k3s.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#1_create_emulation_k3s) file and using arg. `time_start=60` in step 3 at [Lightweight deployment steps](#Lightweight-deployment-steps) is sufficient to see how the replica of the service is changing over the containers, as some of the containers that are in state on will change to off every 2 minutes and viceversa.
 
 However this is important to have in mind then creating a custom emulation file with the format **1_create_emulation_<emulation_name>.sh**.
 
@@ -338,7 +338,7 @@ However this is important to have in mind then creating a custom emulation file 
 nodejs nodejs-server/file-server-express.js
 ```
 
-This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/front-end)
+This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/front-end)
 
 ## Video streaming emulation
 
@@ -350,7 +350,7 @@ The second one is what we called **"K3s"** emulation. In this one the containers
 
 Note: It's assumed that every command must be executed in the directory where this readme file is located.
 
-Initial step - Before going into the steps for this emulation, go to the [K3s](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end/k3s) readme and complete the section called **Environment preparation**
+Initial step - Before going into the steps for this emulation, go to the [K3s](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end/k3s) readme and complete the section called **Environment preparation**
 
 **1 -** Execute the following command to create the containers:
 
@@ -460,22 +460,22 @@ sudo ./3_start_service_check.sh ilens ilens
 cd ..
 ````
 
-**16 -** Here, execute the following command to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#2_execute_emulation):
+**16 -** Here, execute the following command to start the emulation. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [2_execute_emulation.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#2_execute_emulation):
 
 ````bash
 sudo ./2_execute_emulation.sh <time_start>
 ````
 
-**17 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#3_get_containers_status):
+**17 -** Execute the final command in the same terminal, to continuously monitor the containers. Be aware that the **<time_start>** argument depends on the current hour, so it must be set before executing the command. For more information about the input arguments refer to [3_get_containers_status.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#3_get_containers_status):
 
 ````bash
 sudo ./3_get_containers_status.sh nodejs-server/config_matrix.txt nodejs-server/matrix_size.txt nodejs-server/time_diff.txt <time_start> 60
 ````
 
 Note: The main goal of this emulation is to showcase how a replica of a certain service deployed in k3s is disappearing and appearing again when a certain k3s node is removed and reattached from the cluster. So, to give time to k3s to realize the node has disappeared and take actions, i.e. deploy another replica of the service, it's highly recommended to use the argument `time_factor=60` here to avoid the containers to be continuously changing from on to off and viceversa.
-The same applies when configuring the **time_pattern** argument for the script [create_containers.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#create_containers) inside [1_create_emulation_k3s.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#1_create_emulation_k3s) for each container, it's recommended to leave at least 2 hours (that will be minutes due to the time_factor definition to 60) between the turn on and off.
+The same applies when configuring the **time_pattern** argument for the script [create_containers.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#create_containers) inside [1_create_emulation_k3s.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#1_create_emulation_k3s) for each container, it's recommended to leave at least 2 hours (that will be minutes due to the time_factor definition to 60) between the turn on and off.
 
-To summ up, without changing [1_create_emulation_k3s.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#1_create_emulation_k3s) file and using arg. `time_start=60` in step 3 at [Lightweight deployment steps](#Lightweight-deployment-steps) is sufficient to see how the replica of the service is changing over the containers, as some of the containers that are in state on will change to off every 2 minutes and viceversa.
+To summ up, without changing [1_create_emulation_k3s.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#1_create_emulation_k3s) file and using arg. `time_start=60` in step 3 at [Lightweight deployment steps](#Lightweight-deployment-steps) is sufficient to see how the replica of the service is changing over the containers, as some of the containers that are in state on will change to off every 2 minutes and viceversa.
 
 However this is important to have in mind then creating a custom emulation file with the format **1_create_emulation_<emulation_name>.sh**.
 
@@ -485,7 +485,7 @@ However this is important to have in mind then creating a custom emulation file 
 nodejs nodejs-server/file-server-express.js
 ```
 
-This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/front-end)
+This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/front-end)
 
 ## Custom emulation
 
@@ -495,7 +495,7 @@ Before starting to create your own custom emulation, it's highly recommended to 
 
 ### Custom emulation deployment steps
 
-**1 -** Create your own script with the format **1_create_emulation_<emulation_name>.sh**, you can take [1_create_emulation_lightweight.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts#1_create_emulation_lightweight) and [1_create_emulation_k3.sh](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/wiki/Scripts1_create_emulation_k3) as examples.
+**1 -** Create your own script with the format **1_create_emulation_<emulation_name>.sh**, you can take [1_create_emulation_lightweight.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts#1_create_emulation_lightweight) and [1_create_emulation_k3.sh](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/wiki/Scripts1_create_emulation_k3) as examples.
 
 **2 -** Execute the newly created script to create all the containers with the specific time configurations for the emulation:
 
@@ -503,7 +503,7 @@ Before starting to create your own custom emulation, it's highly recommended to 
 sudo ./1_create_emulation_<emulation_name>.sh <cnt_name_suffix>
 ````
 
-**3 -** In case is desired to deploy a cluster with one master and some number of worker nodes, follow the steps at [K3s](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end/k3s).
+**3 -** In case is desired to deploy a cluster with one master and some number of worker nodes, follow the steps at [K3s](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end/k3s).
 
 **4 -** Once the cluster is up and running, execute the following comman:
 
@@ -523,4 +523,4 @@ sudo ./3_get_containers_status.sh <config_matrix> <config_size> <time_diff> <tim
 nodejs nodejs-server/file-server-express.js
 ````
 
-This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/front-end)
+This will serve the files needed through port 8080. Once arrived to this point everything is set up and running for the back-end, Refer to [front-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/front-end)

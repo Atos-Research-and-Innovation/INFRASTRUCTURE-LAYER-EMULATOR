@@ -22,12 +22,12 @@ The development of this emulator it is considered of paramount importance in ord
 
 A screenshot of the ILE GUI can be seen in [Figure 1](#ILEGUI), showcasing a set-up with three MNOs (white polygons) with core and edge resources each (circle and diamond nodes) and a set of extreme-edge nodes beyond the MNOs own domain. Green/red circles and diamonds within and without the MNOs are representing “actual” (containerised) Linux machines able to communicate each other and host network services. In the live set-up those extreme-edge nodes are shown asynchronously “blinking”, i.e., switching between green and red depending on its availability status (connected or disconnected). As it can be seen, three services are also shown deployed, represented by the three thick lines connecting certain nodes, and covering infrastructure resources withing and without the MNO domains. In the live PoC these lines evolve dynamically depending on the connection/disconnection status of the nodes at the extreme-edge, representing the service components re-location in real-time.
 
-![ILE_GUI](../../docs/ILE_GUI.png)
+![ILE_GUI](docs/ILE_GUI.png)
 <a name="ILEGUI">Figure 1</a>: ILE Graphical User Interface (front-end) example.
 
 As depicted in [Figure 2](#ILEcomponents), the asset is splitted in two different parts called the **back-end** and **front-end**. Both are separated in order to be able to run them on different premises, althought them could be run on the same hardware. In the back-end some information is generated and served through a nodejs instance, and then consumed by the front-end for visualizing the information and to be more intuitive for the final user.
 
-![ILE_Image](../../docs/ILE_Image.png)
+![ILE_Image](docs/ILE_Image.png)
 <a name="ILEcomponents">Figure 2</a>: ILE components.
 
 ### Back End
@@ -45,6 +45,6 @@ It's built using java, it consumes the files served by the node.js instance and 
 
 ## Usage
 
-1 - Go to the [back-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end) directory and follow all the steps to deploy the infrastructure nodes of one emulation example.
+1 - Go to the [back-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end) directory and follow all the steps to deploy the infrastructure nodes of one emulation example.
 
-2 - Go to the [front-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/front-end) directory and follow all the steps to execute the java GUI.
+2 - Go to the [front-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/front-end) directory and follow all the steps to execute the java GUI.

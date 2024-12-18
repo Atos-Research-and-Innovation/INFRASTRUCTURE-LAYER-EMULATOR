@@ -63,7 +63,7 @@ In case there exist problems with the connectivity regarding the firewall or doc
 
 ## Cluster deployment
 
-After completing the environment preparation steps, go back to the readme in the [back-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end) directory an follow the steps to deploy the desired LXD containers that will compose the whole emulation. Once the nodes are properly deployed, go to the following steps that will let the reader to deploy several fully functional k3s clusters on the top of the previously deployed LXD containers.
+After completing the environment preparation steps, go back to the readme in the [back-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end) directory an follow the steps to deploy the desired LXD containers that will compose the whole emulation. Once the nodes are properly deployed, go to the following steps that will let the reader to deploy several fully functional k3s clusters on the top of the previously deployed LXD containers.
 
 **1 -** Deploy k3s master nodes:
 
@@ -98,4 +98,4 @@ sudo ./2_create_agent_nodes.sh <master-node> <worker-node1> <worker-node2> [...]
 sudo ./3_start_service_check.sh <namespace> <service-name>
 ````
 
-Now you can go back to the [back-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end) readme to finish the emulation.
+Now you can go back to the [back-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end) readme to finish the emulation.
