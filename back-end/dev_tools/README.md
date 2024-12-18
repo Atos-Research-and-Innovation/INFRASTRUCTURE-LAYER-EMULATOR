@@ -18,11 +18,11 @@ The reader could find in this folder different scripts to help managing the emmu
 
 Reset emmulation, in case it has been started. The spected input arguments are a total of 3:
 
-- **time_start** *type: (str)*. It represents the time the emulation started. The format is *HH24:MM:SS* and indicates the exact time in which the emulation has started. It must be the same arg. as the one passed in the script **2_exec_fake_time_emulation.sh** described in [back-end](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end)
+- **time_start** *type: (str)*. It represents the time the emulation started. The format is *HH24:MM:SS* and indicates the exact time in which the emulation has started. It must be the same arg. as the one passed in the script **2_exec_fake_time_emulation.sh** described in [back-end](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end)
 
-- **namespace** *type: (str)*. name of the namespace where the service has been deployed in the k3s cluster. It must be the same arg. as the one passed in the script **3_start_service_check.sh** described in [k3s](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end/k3s)
+- **namespace** *type: (str)*. name of the namespace where the service has been deployed in the k3s cluster. It must be the same arg. as the one passed in the script **3_start_service_check.sh** described in [k3s](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end/k3s)
 
-- **service-name** *type: (str)*. Name that the background script will write in the configuration file of the specific container. This name was being served by nodejs service and consumed by the front-end. It must be the same arg. as the one passed in the script **3_start_service_check.sh** described in [k3s](https://github.gsissc.myatos.net/GLB-BDS-ETSN-SNS/DECENTRALIZED-CONTINUUM-ORCHESTRATION/tree/develop/ILE/LXD_Container_Approach/back-end/k3s)
+- **service-name** *type: (str)*. Name that the background script will write in the configuration file of the specific container. This name was being served by nodejs service and consumed by the front-end. It must be the same arg. as the one passed in the script **3_start_service_check.sh** described in [k3s](https://github.com/Atos-Research-and-Innovation/INFRASTRUCTURE-LAYER-EMULATOR/tree/main/back-end/k3s)
 
 Usage example:
 ````bash
